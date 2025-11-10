@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, FlatList, StyleSheet, Text } from 'react-native';
+import './ConferenceListScreen.web.css';
 import conferences from '../data/conferences';
 import ConferenceCard from '../components/ConferenceCard';
 
@@ -9,19 +10,21 @@ const ConferenceListScreen = ({ navigation }) => (
       <Text style={styles.headerTitle}>Conferencias</Text>
       <Text style={styles.headerSubtitle}>Festival de Cerveza Artesanal</Text>
     </View>
-    <FlatList
-      data={conferences}
-      keyExtractor={item => item.id.toString()}
-      style={styles.list}
-      contentContainerStyle={styles.listContent}
-      showsVerticalScrollIndicator={false}
-      renderItem={({ item }) => (
-        <ConferenceCard
-          conference={item}
-          onPress={() => navigation.navigate('Detalle', { conference: item })}
-        />
-      )}
-    />
+    <div className="scrollableList">
+      <FlatList
+        data={conferences}
+        keyExtractor={item => item.id.toString()}
+        style={styles.list}
+        contentContainerStyle={styles.listContent}
+        showsVerticalScrollIndicator={true}
+        renderItem={({ item }) => (
+          <ConferenceCard
+            conference={item}
+            onPress={() => navigation.navigate('Detalle', { conference: item })}
+          />
+        )}
+      />
+    </div>
   </View>
 );
 

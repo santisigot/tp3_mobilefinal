@@ -7,8 +7,10 @@ const ConferenceDetailScreen = ({ route, navigation }) => {
 
   const imageSource = typeof conference.image === 'number' ? conference.image : { uri: conference.image };
 
+  // Use style for ScrollView and keep the content container for padding so
+  // the ScrollView can determine its own height (fixes non-scrollable behavior on web).
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView style={styles.scroll} contentContainerStyle={styles.container}>
       <Image source={imageSource} style={styles.image} resizeMode="cover" />
       <TouchableOpacity
         style={styles.mapButton}
@@ -27,10 +29,13 @@ const ConferenceDetailScreen = ({ route, navigation }) => {
 export default ConferenceDetailScreen;
 
 const styles = StyleSheet.create({
+  scroll: {
+    flex: 1,
+    backgroundColor: '#F8FAFC',
+  },
   container: {
     padding: 16,
     backgroundColor: '#F8FAFC',
-    height: '100%',
   },
   empty: {
     flex: 1,
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 500,
+    height: 300,
     borderRadius: 14,
     marginBottom: 14,
   },

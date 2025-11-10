@@ -28,29 +28,29 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 10,
     backgroundColor: '#ffffff',
-    borderRadius: 16,
-    height: 200,
+    borderRadius: 20,
+    height: 220,
     overflow: 'hidden',
     // shadow (iOS)
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.12,
-    shadowRadius: 8,
-    // elevation (Android)
-    elevation: 5,
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 8,
   },
   image: {
     width: '100%',
     height: '100%',
+    position: 'absolute',
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backgroundColor: 'rgba(0, 0, 0, 0.35)',
     zIndex: 1
   },
   info: {
     ...StyleSheet.absoluteFillObject,
-    padding: 16,
+    padding: 18,
     justifyContent: 'flex-end',
     zIndex: 2
   },
@@ -64,20 +64,15 @@ const styles = StyleSheet.create({
   },
   time: {
     color: '#FFFFFF',
-    fontSize: 14,
-    fontWeight: '600',
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: '800',
-    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: '700',
     marginBottom: 8,
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowColor: 'rgba(0, 0, 0, 0.35)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3
   },
   speakerContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(255, 255, 255, 0.12)',
     alignSelf: 'flex-start',
     paddingHorizontal: 12,
     paddingVertical: 6,
@@ -85,7 +80,16 @@ const styles = StyleSheet.create({
   },
   speaker: {
     color: '#FFFFFF',
-    fontSize: 14,
-    fontWeight: '500',
+    fontSize: 13,
+    fontWeight: '600',
+  },
+  title: {
+    color: '#FFFFFF',
+    fontSize: 20,
+    fontWeight: '700',
+    marginBottom: 6,
+    textShadowColor: 'rgba(0, 0, 0, 0.4)',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 6
   },
 });
