@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 220,
     overflow: 'hidden',
+    position: 'relative',
     // shadow (iOS)
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 10 },
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     position: 'absolute',
+    zIndex: 0,
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
